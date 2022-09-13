@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { actions } from '@storybook/addon-actions'
+import Avatar from './Avatar'
+
+<Meta title="atoms/Avatar" component={Avatar} argTypes={{}} />
+
+# Avatar
+
+`Avatar` é um **componente base (atom)**.
+
+`import { Avatar } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Caso você queira que o leitor de tela leia seu avatar, use a propriedade `label` com uma descrição acessível.
+
+```javascript
+<Avatar label="Homem de camisa branca, usando barba e óculos sorrindo ao nascer do sol, em frente às pirâmides egípcias" />
+```
+
+## Propriedades
+
+<ArgsTable of={Avatar} />
+
+## Default
+
+<Canvas>
+  <Story
+    name="Avatar"
+    args={{
+      size: 'xl',
+      isFlat: false,
+      src: 'https://dummyimage.com/96x96/764abc/fff.png&text=FS'
+    }}
+  >
+    {(args) => <Avatar {...args} />}
+  </Story>
+</Canvas>
+
+## To-Do's
+
+[] Tooltip
+[] Badge

@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import Input from './Input'
+
+<Meta title="atoms/Input" component={Input} argTypes={{}} />
+
+# Input
+
+`Input` é um **componente base (atom)**.
+
+`import { Input } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Utilize placeholders exemplificando o tipo de dado que deve ser inserido
+
+Exemplo:
+
+`<Input placeholder="Agnaldo Silva" id="username" name="username" />`
+
+## O que este componente não faz
+
+* [ ] Add behavior to position as 100% inside a consider
+* [ ] Add inline behavior and styles
+* [ ] Add readOnly behavior and styles
+* [ ] Add warning behavior and styles
+* [ ] Add external prop to receive value (today we are able to receive props as soon as needed)
+* [ ] Add behavior to set a color case has filled value
+
+## Propriedades
+
+<ArgsTable of={Input} />
+
+## Default Input
+
+<Canvas>
+  <Story
+    name="Input"
+    args={{
+      id: 'Input-id-defaulft',
+      placeholder: 'My placeholder here',
+      disabled: false,
+      hasError: false
+    }}
+  >
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>

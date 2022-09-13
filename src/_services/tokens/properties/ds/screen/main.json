@@ -1,0 +1,36 @@
+{
+  "ds": {
+    "screen": {
+      "xs": {
+        "value": "480px"
+      },
+      "sm": {
+        "value": "768px"
+      },
+      "sm-min": {
+        "value": "768px"
+      },
+      "md": {
+        "value": "992px"
+      },
+      "md-min": {
+        "value": "992px"
+      },
+      "lg": {
+        "value": "1200px"
+      },
+      "lg-min": {
+        "value": "1200px"
+      },
+      "xs-max": {
+        "value": "767px"
+      },
+      "sm-max": {
+        "value": "991px"
+      },
+      "md-max": {
+        "value": "1199px"
+      }
+    }
+  }
+}

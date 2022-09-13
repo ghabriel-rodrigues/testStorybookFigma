@@ -1,0 +1,22 @@
+{
+  "ds": {
+    "font": {
+      "weight": {
+        "bold": {
+          "value": "bold",
+          "attributes": { "category": "weight", "type": "font" }
+        },
+        "normal": {
+          "value": "normal",
+          "attributes": { "category": "weight", "type": "font" }
+        }
+      },
+      "family": {
+        "main": {
+          "value": "'Lato', sans-serif",
+          "attributes": { "category": "family", "type": "font" }
+        }
+      }
+    }
+  }
+}

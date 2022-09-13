@@ -1,0 +1,23 @@
+{
+  "source": ["./src/_services/tokens/properties/ds/**/*.json"],
+  "platforms": {
+    "ts": {
+      "basePxFontSize": 16,
+      "transforms": ["attribute/cti", "name/cti/pascal", "size/pxToRem", "color/hex"],
+      "buildPath": "./src/tokens/",
+      "files": [{
+        "destination": "tokens.ts",
+        "format": "javascript/es6"
+      }]
+    },
+    "scss": {
+      "basePxFontSize": 16,
+      "transforms": ["attribute/cti", "name/cti/kebab", "time/seconds", "content/icon", "size/pxToRem", "color/css"],
+      "buildPath": "./src/tokens/",
+      "files": [{
+        "destination": "tokens.scss",
+        "format": "scss/variables"
+      }]
+    }
+  }
+}

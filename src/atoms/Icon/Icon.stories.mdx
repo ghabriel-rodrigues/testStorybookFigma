@@ -1,0 +1,27 @@
+import { Meta, IconGallery, IconItem} from '@storybook/addon-docs'
+import { IconType } from './enums.ts'
+import Icon from './Icon'
+
+<Meta title="atoms/Icon" component={Icon} argTypes={{}} />
+
+# Icon
+
+`Icon` é um **componente base (atom)**.
+
+`import { Icon } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Todos os ícones implementam por padrão a propriedade `aria-hidden`, para que não haja problemas com os leitores de tela.
+
+## Icons
+
+<IconGallery>
+{Object.values(IconType).map((type, i) => {
+  return (
+    <IconItem name={type}>
+      <Icon type={type} />
+    </IconItem>
+  )
+})}
+</IconGallery>

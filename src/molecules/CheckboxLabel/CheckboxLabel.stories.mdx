@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import CheckboxLabel from './CheckboxLabel';
+
+<Meta 
+  title="molecules/CheckboxLabel" 
+  component={CheckboxLabel} 
+  argTypes={{
+    labelPosition: {
+      options: ['', 'start', 'end'],
+      control: { type: 'select' }
+    },
+  }}
+/>
+
+# CheckboxLabel
+
+`CheckboxLabel` é um **componente composto de outros componentes (molecule)**.
+
+`import { CheckboxLabel } from '@gupy/design-system-v2'`
+
+## Propriedades
+
+<ArgsTable of={CheckboxLabel} />
+
+## Default CheckboxLabel
+
+<Canvas>
+  <Story 
+    name='CheckboxLabel'
+    args={{
+      id: 'CheckboxLabel-id',
+      label: 'Você concorda com os termos de uso?',
+      checked: false,
+      hasError: false,
+      helperMessage: 'Mensagem de teste de erro'
+    }}
+  >
+    {(args) => <CheckboxLabel {...args} />}
+  </Story>
+</Canvas>

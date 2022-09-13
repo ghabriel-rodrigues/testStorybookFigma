@@ -1,0 +1,23 @@
+// @vitest-environment jsdom
+
+import React from 'react'
+import { it, describe, expect } from 'vitest'
+import { axe } from 'jest-axe'
+import { render } from '@testing-library/react'
+
+import {{pascalCase name}} from './{{pascalCase name}}'
+
+describe('./src/atoms/{{pascalCase name}}', () => {
+  it('should render the component and match snapshot', () => {
+    const { container } = render(<{{pascalCase name}} text="Hello World" />)
+
+    expect(container).toBeInTheDocument()
+  })
+
+  it('shouldnt have any accessibility issues', async () => {
+    const { container } = render(<{{pascalCase name}} text="Hello World" />)
+
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+})

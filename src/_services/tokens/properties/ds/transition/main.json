@@ -1,0 +1,19 @@
+{
+  "ds": {
+    "transition": {
+      "type": {
+        "all": { "value" : "all" },
+        "fill": { "value" : "fill" }
+      },
+      "duration": {
+        "0ms": { "value" : "0ms" },
+        "150ms": { "value": "150ms" },
+        "200ms": { "value": "200ms" }
+      },
+      "effect": {
+        "cubic-bezier": {  
+          "radio": { "value" : "cubic-bezier(0.4, 0, 0.2, 1)" } }
+      }
+    }
+  }
+}

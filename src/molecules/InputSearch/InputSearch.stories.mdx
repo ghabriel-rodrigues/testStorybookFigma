@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import InputSearch from './InputSearch'
+
+<Meta
+  title="molecules/InputSearch"
+  component={InputSearch}
+  argTypes={{
+    size: {
+      options: ['md', 'lg'],
+      control: { type: 'select' }
+    },
+    fullWidth: {
+      options: ['false', 'true'],
+      control: { type: 'boolean' }
+    }
+  }}
+/>
+
+# InputSearch
+
+`InputSearch` é um **componente molécula (molecule)**, composto pelos átomos de Input e Button
+
+`import { InputSearch } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+O componente já oferece interação com os eventos de Teclado padrões para este cenário de uso.
+Com o foco no componente, é possível obter os seguintes comportamentos
+
+- Ao pressionar `ESC`, realiza a limpeza do conteúdo digitado
+- Ao pressionar `ENTER`, realiza o submit os dados contidos no input
+
+### Orientações
+
+Informe o valor da propriedade id, que será repassado ao componente input.
+
+Informe o valor `label` que será repassado ao componente input. Dessa forma, o leitor de tela conseguirá instruir o usuário referente ao seu contexto de uso
+
+Informe o valor `buttonLabel` que será repassado para o botão de ação, caso o usuário queira interagir na tela através dele.
+
+Para demais possibilidades de uso, acesse [este link](https://react-spectrum.adobe.com/react-aria/useSearchField.html)
+
+### O que este componente não faz
+
+- Utilização sem um botão de ação
+- Uso com o botão desabilitado
+- Utilização exibindo a Label
+- Cobrir toda a área do input + botão quando o foco estiver no componente (neste momento, o foco esta em cada um dos elementos)
+
+## Propriedades
+
+<ArgsTable of={InputSearch} />
+
+É possível passar propriedades adicionais que sejam necessárias, como também escutar os eventos de interação com o componente, como o `onChange`, `onSubmit` e `onClick`
+
+## Default InputSearch
+
+<Canvas>
+  <Story
+    name="InputSearch"
+    args={{
+      id: 'input-text',
+      label: 'My input label here',
+      placeholder: 'My placeholder here',
+      fullWidth: false,
+      onChange: (e) => console.log('changing input', e),
+      onSubmit: (e) => console.log('submit event', e),
+      onClick: (e) => console.log('click event', e)
+    }}
+  >
+    {(args) => <InputSearch {...args} />}
+  </Story>
+</Canvas>

@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Chip from './Chip'
+import { actions } from '@storybook/addon-actions'
+import DSIcon from '@atoms/Icon/Icon'
+import { IconType } from '@atoms/Icon/enums'
+
+<Meta title="atoms/Chip" component={Chip} argTypes={{}} />
+
+# Chip
+
+`Chip` é um **componente base (atom)**.
+
+`import { Chip } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+O componente `Chip` pode receber uma propriedade `closeLabel` para ser atribuído ao `aria-label` do botão de fechar.
+
+```javascript
+<Chip label="remover filtro">Vagas remotas</Chip>
+```
+
+## Propriedades
+
+<ArgsTable of={Chip} />
+
+## Default Chip
+
+<Canvas>
+  <Story name="Chip">
+    {(args) => {
+      return (
+        <div>
+          <Chip
+            closeLabel="remover filtro Microsoft Excel"
+            {...actions({ onClose: 'close', onClick: 'click' })}
+            m={10}
+          >
+            Microsoft Excel
+          </Chip>
+          <Chip {...actions({ onClick: 'click' })} m={10}>
+            Adobe Photoshop
+          </Chip>
+          <Chip m={10}>HTML</Chip>
+        </div>
+      )
+    }}
+  </Story>
+</Canvas>

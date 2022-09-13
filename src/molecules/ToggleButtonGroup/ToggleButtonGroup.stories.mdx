@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import ToggleButtonGroup from './ToggleButtonGroup'
+
+<Meta
+  title="molecules/ToggleButtonGroup"
+  component={ToggleButtonGroup}
+/>
+
+# ToggleButtonGroup
+`ToggleButtonGroup` é um **componente composto de outros componentes (molecule)**.
+
+`import { ToggleButtonGroup } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+Com o foco no componente, é possível obter os seguintes comportamentos
+  - Ao pressionar `SPACE` e/ou `ENTER`, irá realizar a ativação/desativação do botão
+  - Ao pressionar as setas direcionais `ARROW-LEFT` `ARROW-RIGHT`, será realizada a navegação na horizontal
+  - Ao pressionar as setas direcionais `ARROW-UP` `ARROW-DOWN`, será realizada a navegação na vertical
+  - Ao pressionar `HOME` será movimentado o foco para o primeiro item da lista
+  - Ao pressionar `END` será movimentado o foco para o último item da lista
+
+Para demais extensões dos comportamentos, [verifique a documentação](https://www.radix-ui.com/docs/primitives/components/toggle-group)
+
+## O que este componente não faz 
+- Utilização com alteração de valor pela propriedade `value`
+
+## Propriedades
+
+<ArgsTable of={ToggleButtonGroup} />
+
+## Default ToggleButtonGroup
+
+<Canvas>
+  <Story
+    name='ToggleButtonGroup'
+    args={{
+      id: 'input-text',
+      ariaLabelGroup: 'Grupo de botões com atalhos para edição de texto.',
+      label: 'My input label here',
+      data: [
+        {label:'Label - 1', value:'Label-1'},
+        {label:'Label - 2', value:'Label-2'},
+      ],
+      disabled: false
+    }}
+  >
+    {(args) => <ToggleButtonGroup {...args} />}
+  </Story>
+</Canvas>

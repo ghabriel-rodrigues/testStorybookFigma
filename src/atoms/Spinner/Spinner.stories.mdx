@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Spinner from './Spinner'
+
+<Meta title="atoms/Spinner" component={Spinner} argTypes={{}} />
+
+# Spinner
+
+`Spinner` é um **componente base (atom)**.
+
+`import { Spinner } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Spinner deve receber uma propriedade `label`, definindo um texto amigável indicando o progresso atual da tarefa em espera. [Documentação sobre progressbar role no MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_progressbar_role)
+
+### O que este componente não faz
+
+- Customização de cor via color prop
+- Customização de tamanho via size prop
+
+## Propriedades
+
+<ArgsTable of={Spinner} />
+
+## Default Chip
+
+<Canvas>
+  <Story name="Spinner">
+    {(args) => {
+      return (
+        <div
+          style={{
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <Spinner />
+        </div>
+      )
+    }}
+  </Story>
+</Canvas>

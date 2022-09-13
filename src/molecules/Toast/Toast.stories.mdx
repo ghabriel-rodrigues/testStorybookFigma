@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Toast from './Toast'
+
+<Meta title="molecules/Toast" component={Toast} argTypes={{}} />
+
+# Toast
+
+`Toast` é um **componente composto de outros componentes (molecule)**.
+
+`import { Toast } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Todo `Toast` deve receber uma propriedade `label` para ser atribuído ao `aria-label` do botão de fechar.
+
+```javascript
+<Toast label="remover filtro">Vagas remotas</Toast>
+```
+
+## Propriedades
+
+<ArgsTable of={Toast} />
+
+## Default Toast
+
+<Canvas>
+  <Story
+    name="Toast"
+    args={{
+      id: 'toast-id',
+      message: 'Toast Box',
+      ariaLabel: 'Toast contendo uma mensagem de aviso',
+      open: true,
+      actionButton: {
+        description: 'Desfazer',
+        action: () => alert('teste')
+      },
+      onClose: () => (open = !open)
+    }}
+  >
+    {(args) => <Toast {...args} />}
+  </Story>
+</Canvas>

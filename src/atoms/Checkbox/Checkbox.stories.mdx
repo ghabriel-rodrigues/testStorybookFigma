@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Checkbox from './Checkbox';
+
+<Meta 
+  title="atoms/Checkbox" 
+  component={Checkbox} 
+  argTypes={{}}
+/>
+
+# Checkbox
+
+`Checkbox` é um **componente base (atom)**.
+
+`import { Checkbox } from '@gupy/design-system-v2'`
+
+## Aviso importante
+
+Alguns comportamentos e efeitos visuais ainda não estão sendo suportados por essa primeira versão do componente.
+
+Exemplos:
+
+* Ripple effect is not being supported right now. Please check the link for a possible solution.
+`https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/`
+
+## Propriedades
+
+<ArgsTable of={Checkbox} />
+
+## Default Checkbox
+
+<Canvas>
+  <Story 
+    name='Checkbox'
+    args={{
+      id: 'checkbox-id',
+      checked: false
+    }}
+  >
+    {(args) => <Checkbox {...args} />}
+  </Story>
+</Canvas>

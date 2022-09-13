@@ -1,0 +1,357 @@
+import { Meta, Source, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
+import dedent from 'ts-dedent';
+import * as tokens from '@/tokens/tokens'
+
+export const typography = {
+  type: {
+    fontFamily: `${tokens.DsFontFamilyMain}`,
+  },
+  weight: {
+    normal: 'normal',
+    bold: 'bold',
+  },
+  size: {
+    DsFontSizeXs: `${tokens.DsFontSizeXs}`,
+    DsFontSizeSm: `${tokens.DsFontSizeSm}`,
+    DsFontSizeBase: `${tokens.DsFontSizeBase}`,
+    DsFontSizeLg: `${tokens.DsFontSizeLg}`,
+    DsFontSizeLg2: `${tokens.DsFontSizeLg2}`,
+    DsFontSizeNm: `${tokens.DsFontSizeNm}`,
+    DsFontSizeXlg: `${tokens.DsFontSizeXlg}`,
+    DsFontSizeXxlg: `${tokens.DsFontSizeXxlg}`,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+
+
+<Meta title="Design Tokens" />
+
+# Design Tokens
+
+Os design tokens são nossas variáveis semânticas de estilo, propriedades que conseguem expressar 
+um significado comum entre os times de Engenharia, Produto e Design para designar informações referentes 
+a aparência de um respectivo componente. Com eles, definimos cores, espaçamentos, bordas, fontes e breakpoints.
+
+Nesse momento, as versões dos tokens que existem no DS2 foram criadas a partir da perspectiva do 
+[DS1](https://design-system.app.internal.gupy.io/design-tokens) e são mantidas utilizando a lib
+[Amazon Style Dictionary](https://amzn.github.io/style-dictionary/#/).
+
+Aqui neste documento você encontrará mais informações sobre os tipos de tokens e mais abaixo, 
+existe uma seção auxiliando com as dúvidas mais frequentes das pessoas desenvolvedoras em relação a esse tema.
+
+## Cores
+
+As definições de cores do Design System da Gupy tem passado por mudanças para tornar os produtos Gupy mais inclusivos e acessíveis
+para pessoas com diferentes níveis de percepção visual.
+
+Provisoriamente, devido a versão do DS2 ser MVP, as cores estão sendo criadas com a sigla `DS` atrelada ao nome, 
+dada a possível necessidade de suportarmos diferentes versões dos tokens por diferentes versões do DS. Futuramente deverão ser lançadas novas releases, 
+alterando os nomes dos tokens conforme o time de Design fizer essas definições.
+
+**As cores podem ser encontradas nos dois formatos abaixo:**
+
+- `scss` - `$ds-color-primary-blue-dark`
+- `typescript` - `DsColorPrimaryBlueDark` 
+
+**Exemplo de uso com Typescript:**
+<Source
+  language='js'
+  dark
+  format={false}
+  code={dedent`
+  import styled, { css } from 'styled-components'
+  import { DsColorPrimaryBlueDark } from '@/tokens/tokens'
+  
+  const Input = styled.input\`
+    background: \${DsColorPrimaryBlueDark};\`
+  `}
+/>
+
+
+### Cores Primárias e Secundárias
+
+<ColorPalette>
+  <ColorItem
+    title="Primary Blue"
+    subtitle="Escala de cores primárias"
+    colors={{ 
+      "DsColorPrimaryBlue": `${tokens.DsColorPrimaryBlue}`, 
+      "DsColorPrimaryBlueDark": `${tokens.DsColorPrimaryBlueDark}`, 
+      "DsColorPrimaryBlueLight": `${tokens.DsColorPrimaryBlueLight}`,  
+    }}
+  />
+  <ColorItem
+    title="Secondary Blue"
+    subtitle="Escala de cores azuis secundárias"
+    colors={{ 
+      "DsColorPrimaryBlueSecondary": `${tokens.DsColorPrimaryBlueSecondary}`, 
+      "DsColorPrimaryBlueSecondaryLight": `${tokens.DsColorPrimaryBlueSecondaryLight}`, 
+    }}
+  />
+  <ColorItem
+    title="Secondary Green"
+    subtitle="Escala de cores verdes secundárias"
+    colors={{ 
+      "DsColorSecondaryGupyGreen": `${tokens.DsColorSecondaryGupyGreen}`, 
+      "DsColorSecondaryGupyGreenDark": `${tokens.DsColorSecondaryGupyGreenDark}`, 
+    }}
+  />
+  <ColorItem
+    colors={{
+       "DsColorSecondaryGupyGreenSecondary": `${tokens.DsColorSecondaryGupyGreenSecondary}`, 
+    }}
+  />
+</ColorPalette>
+
+### Escala de cores cinzas
+
+<ColorPalette>
+  <ColorItem
+    subtitle="Escala de cores cinzas"
+    colors={{ 
+      "DsColorGrayBlackboard": `${tokens.DsColorGrayBlackboard}`, 
+      "DsColorGraySpaceGray": `${tokens.DsColorGraySpaceGray}`, 
+      "DsColorGraySteel": `${tokens.DsColorGraySteel}`, 
+      "DsColorGraySilver": `${tokens.DsColorGraySilver}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorGraySmoke": `${tokens.DsColorGraySmoke}`, 
+      "DsColorGraySmokeLight": `${tokens.DsColorGraySmokeLight}`, 
+      "DsColorGraySmokeExtraLight": `${tokens.DsColorGraySmokeExtraLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorGraySmoke": `${tokens.DsColorGraySmoke}`, 
+      "DsColorGraySmokeLight": `${tokens.DsColorGraySmokeLight}`, 
+      "DsColorGraySmokeExtraLight": `${tokens.DsColorGraySmokeExtraLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorGrayPolar": `${tokens.DsColorGrayPolar}`, 
+      "DsColorGrayPolarLight": `${tokens.DsColorGrayPolarLight}`, 
+      "DsColorGrayPolarExtraLight": `${tokens.DsColorGrayPolarExtraLight}`, 
+      "DsColorGraySnow": `${tokens.DsColorGraySnow}`, 
+    }}
+  />
+</ColorPalette>
+
+### Escala de Feedback de UI
+<ColorPalette >
+  <ColorItem
+    subtitle="Escala de cores de alertas"
+    colors={{ 
+      "DsColorAlertDanger": `${tokens.DsColorAlertDanger}`, 
+      "DsColorAlertDangerLight": `${tokens.DsColorAlertDangerLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAlertSuccess": `${tokens.DsColorAlertSuccess}`, 
+      "DsColorAlertSuccessLight": `${tokens.DsColorAlertSuccessLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAlertWarning": `${tokens.DsColorAlertWarning}`, 
+      "DsColorAlertWarningLight": `${tokens.DsColorAlertWarningLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAlertInformation": `${tokens.DsColorAlertInformation}`, 
+      "DsColorAlertInformationLight": `${tokens.DsColorAlertInformationLight}`, 
+    }}
+  />
+</ColorPalette>
+
+### Cores Accent
+<ColorPalette>
+  <ColorItem
+    subtitle="Escala de cores accent"
+    colors={{ 
+      "DsColorAccentBlue": `${tokens.DsColorAccentBlue}`, 
+      "DsColorAccentBlueLight": `${tokens.DsColorAccentBlueLight}`,
+      "DsColorAccentBlueExtraLight": `${tokens.DsColorAccentBlueExtraLight}`, 
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAccentGreen": `${tokens.DsColorAccentGreen}`, 
+      "DsColorAccentGreenLight": `${tokens.DsColorAccentGreenLight}`,
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAccentSalmon": `${tokens.DsColorAccentSalmon}`, 
+      "DsColorAccentSalmonLight": `${tokens.DsColorAccentSalmonLight}`,
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAccentPink": `${tokens.DsColorAccentPink}`, 
+      "DsColorAccentPinkLight": `${tokens.DsColorAccentPinkLight}`,
+    }}
+  />
+  <ColorItem
+    colors={{ 
+      "DsColorAccentPurple": `${tokens.DsColorAccentPurple}`, 
+      "DsColorAccentPurpleLight": `${tokens.DsColorAccentPurpleLight}`,
+    }}
+  />
+</ColorPalette>
+
+### Cores de redes sociais
+<ColorPalette>
+  <ColorItem
+    subtitle="Facebook"
+    colors={{ 
+      "DsColorSocialFacebook": `${tokens.DsColorSocialFacebook}`,
+    }}
+  />
+  <ColorItem
+    subtitle="Twitter"
+    colors={{ 
+      "DsColorSocialTwitter": `${tokens.DsColorSocialTwitter}`,
+    }}
+  />
+  <ColorItem
+    subtitle="Linkedin"
+    colors={{ 
+      "DsColorSocialLinkedin": `${tokens.DsColorSocialLinkedin}`,
+    }}
+  />
+  <ColorItem
+    subtitle="Google"
+    colors={{ 
+      "DsColorSocialGoogle": `${tokens.DsColorSocialGoogle}`,
+    }}
+  />
+</ColorPalette>
+
+
+## Spacing
+
+| Size | Value   | Token Reference |
+| ---- | ----    | --------------- |
+| `xs` | 0.25rem | DsSpacingXs     |
+| `sm` | 0.5rem  | DsSpacingSm     |
+| `md` | 1rem    | DsSpacingMd     |
+| `lg` | 1.5rem  | DsSpacingLg     |
+| `xl` | 2rem    | DsSpacingXl     |
+
+## Border
+
+| Type     | Value         | Token Reference |
+| -------- | ------------- | --------------- |
+| `radius` | 0.25rem       | DsBorderRadius  |
+| `width`  | 0.0625rem     | DsBorderWidth   |
+
+## Breakpoints
+
+| Size     | Value      | Token Reference |
+| -------- | ---------- | --------------- |
+| `xs`     | 480px      | DsScreenXs      |
+| `xs-max` | 767px      | DsScreenXsMax   |
+| `sm`     | 768px      | DsScreenSm      |
+| `sm-min` | 768px      | DsScreenSmMin   |
+| `sm-max` | 991px      | DsScreenSmMax   |
+| `md`     | 992px      | DsScreenMd      |
+| `md-min` | 992px      | DsScreenMdMin   |
+| `md-max` | 1199px     | DsScreenMdMax   |
+| `lg`     | 1200px     | DsScreenLg      |
+| `lg-min` | 1200px     | DsScreenLgMin   |
+
+## Fontes (Tipografia)
+
+**Font:** `Lato`
+
+**Weights:** `normal`, `bold`
+
+| Size     | Value      | Token Reference |
+| -------- | ---------- | --------------- |
+| `xs`     | 0.625rem   | DsFontSizeXs    |
+| `sm`     | 0.75rem    | DsFontSizeSm    |
+| `base`   | 0.875rem   | DsFontSizeBase  |
+| `lg`     | 1rem       | DsFontSizeLg    |
+| `lg2`    | 1.125rem   | DsFontSizeLg2   |
+| `nm`     | 1.25rem    | DsFontSizeNm    |
+| `xlg`    | 1.5rem     | DsFontSizeXlg   |
+| `xxlg`   | 2rem       | DsFontSizeXxlg  |
+
+
+<Typeset
+  fontSizes={[
+    typography.size.DsFontSizeXs,
+    typography.size.DsFontSizeSm,
+    typography.size.DsFontSizeBase,
+    typography.size.DsFontSizeLg,
+    typography.size.DsFontSizeLg2,
+    typography.size.DsFontSizeNm,
+    typography.size.DsFontSizeXlg,
+    typography.size.DsFontSizeXxlg,
+  ]}
+  fontWeight={typography.weight.bold}
+  fontFamily={typography.type.fontFamily}
+  sampleText={SampleText}
+/>
+
+## Perguntas frequentes
+
+**Como gerar os tokens caso eu tenha clonado o DS2 para o meu computador?**
+
+O comando que gera tokens é o `npm run tokens` e ele precisa ser executado na raíz do projeto.
+
+
+**Onde ficam os Design Tokens do DS2 que podem ser utilizados?**
+
+Os design tokens hoje possuem dois diferentes arquivos de uso:
+* `scss`, se localizam no arquivo `src/tokens/tokens.scss`
+* `consts`, se localizam no arquivo `src/tokens/tokens.ts`
+
+IMPORTANTE: Nunca acrescente tokens diretamente nesses arquivos, eles são gerados sempre a
+partir da lib Style Dictionary.
+
+**Como posso editar ou acrescentar um novo token ao DS2?**
+
+Para você acrescentar um novo token você pode acessar a estrutura de arquivos localizada em
+`src/_services/tokens/properties/ds/` , verificando qual atributo você gostaria de editar 
+ou acrescentar a partir do nome das pastas. 
+
+Dentro dela você poderá perceber que temos:
+
+* `border/` 
+* `color/` 
+* `font/` 
+* `screen/` 
+* `spacing/` 
+* `transition/` 
+
+Abaixo você pode ver um exemplo desses arquivos, no caso o referente à geração de bordas: `src/_services/tokens/properties/ds/border/main.json` 
+
+<Source
+  language='json'
+  dark
+  format={false}
+  code={dedent`
+     {
+      "ds": {
+        "border": {
+          "radius": {
+            "value": "4px",
+            "attributes": { "category": "size", "type": "radius" }
+          },
+          "width": {
+            "value": "1px",
+            "attributes": { "category": "size", "type": "border" }
+          }
+        }
+      }
+    }
+  `}
+/>

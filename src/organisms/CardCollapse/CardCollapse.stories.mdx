@@ -1,0 +1,143 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import CardCollapse from './CardCollapse'
+import Heading from '@atoms/Typography/Heading/Heading'
+import { HeadingVariant } from '@atoms/Typography/Heading/types/Types'
+import Paragraph from '@atoms/Typography/Paragraph/Paragraph'
+import Button from '@atoms/Button/Button'
+
+<Meta
+  title="organisms/CardCollapse"
+  component={CardCollapse}
+  argTypes={{}}
+/>
+
+
+# CardCollapse
+
+`CardCollapse` é um **componente composto de outros componentes (organism)**..
+
+`import CardCollapse from '@gupy/design-system-v2'`
+
+**Este componente é interdependente dos componentes listados abaixo**
+
+* `Radix UI Collapsible.Primitive`
+* `@atoms/Icon`
+* `@atoms/Button`
+* `@atoms/Heading`
+* `@atoms/Divisor`
+
+## Acessibilidade
+
+O componente `CardCollapse` utiliza a implementação da [RADIX UI - Collapsible](https://www.radix-ui.com/docs/primitives/components/collapsible).
+Esse componente suporta os comportamentos assistivos requeridos pela A11Y seguindo o padrão [Disclosure](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/).
+Consulte a documentação da Radix para mais informações sobre os atributos e métodos desse componente.
+
+Quando o conteúdo está visível, o elemento botão possui o atributo aria-expanded como `true`. Quando o conteúdo está escondido, o atributo é `false`.
+Também é possível escolher um texto de leitura para o botão de expansão utilizando a prop `expandButtonAriaLabel`, que define o atributo `aria-label` do mesmo.
+
+## Propriedades
+
+<ArgsTable of={CardCollapse} />
+
+
+## CardCollapse Simples
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      title: 'Cursos e certificações',
+      expandButtonAriaLabel: 'Expandir área de cursos e certificações',
+      open: false
+    }}
+  >
+    {(args) => (
+        <CardCollapse {...args}>
+          <Heading variant={HeadingVariant.h4}>Competência</Heading>
+          <Paragraph>UX Metrics and ROI - NNGroup</Paragraph>
+          <Paragraph>Curso de 44 horas sobre métricas de UX e retorno sobre investimento.</Paragraph>
+        </CardCollapse>
+      )
+    }
+  </Story>
+</Canvas>
+
+## CardCollapse com um botão
+
+<Canvas>
+  <Story
+    name="One button"
+    args={{
+      title: 'Cursos e certificações',
+      expandButtonAriaLabel: 'Expandir área de cursos e certificações',
+      open: true
+    }}
+  >
+    {(args) => {
+      const primaryButton = 
+        <Button
+          id="primaryButton"
+          variant="text"
+          size='sm'
+          text="Adicionar"
+          iconType="Add"
+          iconAlignment="left"
+        />
+      return (
+        <CardCollapse
+          {...args}
+          primaryButton={primaryButton}
+        >
+          <Heading variant={HeadingVariant.h4}>Competência</Heading>
+          <Paragraph>UX Metrics and ROI - NNGroup</Paragraph>
+          <Paragraph>Curso de 44 horas sobre métricas de UX e retorno sobre investimento.</Paragraph>
+        </CardCollapse>
+      )
+    }}
+  </Story>
+</Canvas>
+
+## CardCollapse com dois botões
+
+<Canvas>
+  <Story
+    name="Two buttons"
+    args={{
+      title: 'Cursos e certificações',
+      expandButtonAriaLabel: 'Expandir área de cursos e certificações',
+      open: true
+    }}
+  >
+    {(args) => {
+      const primaryButton = 
+        <Button
+          id="primaryButton"
+          variant="text"
+          size='sm'
+          text="Adicionar"
+          iconType="Add"
+          iconAlignment="left"
+        />
+      const secondaryButton = 
+        <Button
+          id="secondaryButton"
+          variant="text"
+          size='sm'
+          text="Editar"
+          iconType="Create"
+          iconAlignment="left"
+        />
+      return (
+        <CardCollapse
+          {...args}
+          primaryButton={primaryButton}
+          secondaryButton={secondaryButton}
+        >
+          <Heading variant={HeadingVariant.h4}>Competência</Heading>
+          <Paragraph>UX Metrics and ROI - NNGroup</Paragraph>
+          <Paragraph>Curso de 44 horas sobre métricas de UX e retorno sobre investimento.</Paragraph>
+        </CardCollapse>
+      )
+    }}
+  </Story>
+</Canvas>

@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Pagination from './Pagination'
+import { actions } from '@storybook/addon-actions'
+
+<Meta title="molecules/Pagination" component={Pagination} argTypes={{}} />
+
+# Pagination
+
+`Paginaton` é um **componente composto de outros componentes (molecule)**.
+
+`import { Paginaton } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Utilize o atributo `ariaLabelPagination` para indicar o que se refere a Paginação. Ex: Paginação do resultado da busca.
+
+Utilize o atributo `ariaLabelPageButton` para indicar o botão que recebe o valor da página. Obs: O valor da página é preenchido automaticamente. Ex: Página 3.
+
+Utilize o atributo `ariaLabelNextButton` para indicar o botão de próximo. Ex: Vá para próxima página.
+
+Utilize o atributo `ariaLabelPrevButton` para indicar o botão de anterior. Ex: Vá para página anterior.
+
+## Propriedades
+
+<ArgsTable of={Pagination} />
+
+## Default Pagination
+
+<Canvas>
+  <Story
+    name="Pagination"
+    args={{
+      initialPage: 2,
+      totalPages: 5,
+      ariaLabelPagination: 'Paginação do resultado da busca',
+      ariaLabelPageButton: 'Página',
+      ariaLabelNextButton: 'Vá para próxima página',
+      ariaLabelPrevButton: 'Vá para página anterior',
+      ...actions({ onPageChange: 'onPageChange' })
+    }}
+  >
+    {(args) => <Pagination {...args} />}
+  </Story>
+</Canvas>

@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import InputHelperMessage from './InputHelperMessage';
+
+<Meta 
+  title="atoms/InputHelperMessage" 
+  component={InputHelperMessage} 
+  argTypes={{}}
+/>
+
+# InputHelperMessage
+
+`InputHelperMessage` é um **componente base (atom)**. 
+
+`import { InputHelperMessage } from '@gupy/design-system-v2'`
+
+## Propriedades
+
+<ArgsTable of={InputHelperMessage} />
+
+## Default InputHelperMessage
+
+<Canvas>
+  <Story 
+    name='InputHelperMessage'
+    args={{children: 'My HelperMessage'}}
+  >
+    {(args) => <InputHelperMessage {...args} />}
+  </Story>
+</Canvas>

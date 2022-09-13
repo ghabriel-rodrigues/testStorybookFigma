@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
+import { Drawer } from './Drawer'
+import { Target } from './Target'
+import { Trigger } from './index'
+
+<Meta title="atoms/Drawer" component={Drawer} />
+
+# Drawer
+
+`Drawer` é um **componente base (atom)**.
+
+`import { Drawer, Target, Trigger } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Drawer é um componente controlado por um [disclosure](https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure).
+Para ele funcionar via teclado e via leitores de tela, precisamos passar um _id_ único para o componente _Drawer_, e utilizar
+os componentes _Trigger_ e _Target_ para compor suas funcionalides.
+Dessa forma, todas as regras necessarias para um disclosure seram aplicadas corretamente.
+
+## Propriedades
+
+<ArgsTable of={Drawer} />
+
+## To-Do's
+
+- [ ] colocar transições de animações no objeto de tema
+- [ ] colocar _box-shadow_ no objeto de tema
+
+## Stories
+
+<Canvas>
+  <Story
+    name="Drawer"
+    args={{
+      id: 'stories-for-drawer',
+      closable: true
+    }}
+  >
+    {(args) => (
+      <Drawer {...args}>
+        <Trigger>
+          <button>Open Drawer</button>
+        </Trigger>
+        <Target>
+          <div style={{ padding: '0 1em 0 1em' }}>
+            <p style={{ margin: 0 }}>Hi, click outside of drawer to close it</p>
+          </div>
+        </Target>
+      </Drawer>
+    )}
+  </Story>
+</Canvas>

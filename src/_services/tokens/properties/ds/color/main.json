@@ -1,0 +1,204 @@
+{
+  "ds": {
+    "color": {
+      "primary": {
+        "blue-dark": {
+          "value": "#061C39",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue-light": {
+          "value": "#D6F3F9",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue": {
+          "value": "#13335F",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue-secondary": {
+          "value": "#16A5D6",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue-secondary-light": {
+          "value": "#D0EDF7",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "secondary": {
+        "gupy-green-dark": {
+          "value": "#0EA6A8",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "gupy-green": {
+          "value": "#16BFC1",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "gupy-green-secondary": {
+          "value": "#16D6A9",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "gray": {
+        "blackboard": {
+          "value": "#3A3A3A",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "space-gray": {
+          "value": "#555555",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "steel": {
+          "value": "#8C8C8C",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "silver": {
+          "value": "#A7A7A7",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "smoke": {
+          "value": "#B8B8B8",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "smoke-light": {
+          "value": "#CCCCCC",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "smoke-extra-light": {
+          "value": "#DDDDDD",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "polar": {
+          "value": "#EEEEEE",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "polar-light": {
+          "value": "#F2F2F2",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "polar-extra-light": {
+          "value": "#F9F9F9",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "snow": {
+          "value": "#FFFFFF",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "alert": {
+        "danger": {
+          "value": "#CC1605",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "danger-light": {
+          "value": "#FBECEB",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "success": {
+          "value": "#008C6D",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "success-light": {
+          "value": "#EBF6F3",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "warning": {
+          "value": "#C17709",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "warning-light": {
+          "value": "#FAF4EB",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "information": {
+          "value": "#1298C6",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "information-light": {
+          "value": "#ECF7FA",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "accent": {
+        "blue": {
+          "value": "#578BDE",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue-light": {
+          "value": "#D9E3F4",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "blue-extra-light": {
+          "value": "#ECF0F7",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "green": {
+          "value": "#16BFC1",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "green-light": {
+          "value": "#CCEDEE",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "salmon": {
+          "value": "#FFA588",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "salmon-light": {
+          "value": "#FAE8E2",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "pink": {
+          "value": "#FF8EA3",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "pink-light": {
+          "value": "#FAE4E8",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "purple": {
+          "value": "#B7A1E9",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "purple-light": {
+          "value": "#ECE7F6",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "social": {
+        "facebook": {
+          "value": "#1778F2",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "linkedin": {
+          "value": "#0077B5",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "twitter": {
+          "value": "#55ACEE",
+          "attributes": { "category": "color", "type": "brand" }
+        },
+        "google": {
+          "value": "#4885ED",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      },
+      "translucent": {
+        "black": {
+          "1": {
+            "value": "rgba(0, 0, 0, 0.1)",
+            "attributes": { "category": "color", "type": "brand" }
+          },
+          "54": {
+            "value": "rgba(0, 0, 0, 0.54)",
+            "attributes": { "category": "color", "type": "brand" }
+          }
+        }
+      },
+      "temporary": {
+        "gray": {
+          "value": "#757575",
+          "attributes": { "category": "color", "type": "brand" }
+        }
+      }
+    }
+  }
+}

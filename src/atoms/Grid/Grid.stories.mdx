@@ -1,0 +1,85 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Grid from './Grid'
+import Card from '../Card/Card'
+
+<Meta title="atoms/Grid" component={Grid} argTypes={{}} />
+
+# Grid
+
+`Grid` é um **componente base (atom)**.
+
+`import { Grid } from '@gupy/design-system-v2'`
+
+O sistema de grid é implementado com o componente `<Grid/>`. Ele usa o módulo Flexible Box do CSS.
+
+Existem dois tipos de variants: `container` e `item`.
+
+As larguras dos itens são definidas em porcentagens, para que sejam sempre fluidas e dimensionadas em relação ao elemento pai.
+
+Os itens têm preenchimento para criar o espaçamento entre itens individuais.
+Existem quatro breakpoints do grid: `xs`, `sm`, `md` e `lg`.
+
+## Breakpoints do grid
+
+As larguras das colunas são valores inteiros entre 1 e 12; veja o exemplo de utilização:
+
+<Grid variant="container">
+  <Grid variant="item" xs={12} sm={6}>
+    <Card>xs=12 sm=6</Card>
+  </Grid>
+  <Grid variant="item" xs={12} sm={6}>
+    <Card>xs=12 sm=6</Card>
+  </Grid>
+  <Grid variant="item" xs={12} sm={6} md={9} lg={3}>
+    <Card>xs=12 sm=6 md=9 lg=3</Card>
+  </Grid>
+  <Grid variant="item" xs={12} sm={6} md={3} lg={3}>
+    <Card>xs=12 sm=6 md=3 lg=3</Card>
+  </Grid>
+  <Grid variant="item" xs={12} sm={6} md={9} lg={3}>
+    <Card>xs=12 sm=6 md=9 lg=3</Card>
+  </Grid>
+  <Grid variant="item" xs={12} sm={6} md={3} lg={3}>
+    <Card>xs=12 sm=6 md=3 lg=3</Card>
+  </Grid>
+</Grid>
+
+Breakpoint `lg`: maior ou igual a `64em`
+
+Breakpoint `md`: maior ou igual a `52em`
+
+Breakpoint `sm`: maior ou igual a `40em`
+
+Breakpoint `xs`: menores que `40em`
+
+## Propriedades
+
+<ArgsTable of={Grid} />
+
+## Default Grid
+
+<Canvas>
+  <Story name="Grid" args={{}}>
+    {(args) => {
+      return (
+        <Grid variant="container">
+          <Grid variant="item" {...args}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut
+            tellus sit amet odio volutpat pretium. Nunc fringilla, magna vel
+            euismod varius, urna nisl rutrum leo, a finibus mi ipsum non neque.
+            Sed eleifend tortor tincidunt pellentesque interdum. Maecenas
+            vehicula sapien metus, ac fringilla lacus cursus a. Praesent sapien
+            diam, scelerisque nec lectus non, dapibus tempus est. Ut sodales,
+            lectus nec fermentum imperdiet, felis elit vestibulum ligula, non
+            egestas nunc sapien et ipsum. Nam auctor, neque eget suscipit
+            tristique, enim diam pellentesque est, vitae dapibus lorem lectus eu
+            dui. Sed vitae velit eget quam laoreet laoreet eu vestibulum arcu.
+            Fusce eget lorem orci. Integer malesuada nec augue sed fringilla.
+            Suspendisse ex mauris, placerat eget convallis at, consequat at
+            nisl.
+          </Grid>
+        </Grid>
+      )
+    }}
+  </Story>
+</Canvas>

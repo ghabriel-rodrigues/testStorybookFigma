@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import InputFile from './InputFile'
+
+<Meta title="atoms/InputFile" component={InputFile} argTypes={{}} />
+
+# InputFile
+
+`InputFile` é um **componente base (atom)**.
+
+`import { InputFile } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Utilize o componente informando pelo menos a property onFileUpload e, de preferência, o id.
+
+Esse componente utiliza apenas componentes HTML, então já contempla os funcionamentos acessíveis providos pelo HTML.
+
+Exemplo:
+
+`<InputFile onFileUpload={handleFileInput} id="file-upload" />`
+
+## O que este componente não faz
+
+* [ ] Add behavior to position as 100% inside a consider
+* [ ] Add inline behavior and styles
+* [X] Add readOnly behavior and styles
+* [ ] Add warning behavior and styles
+* [ ] Add external prop to receive value (today we are able to receive props as soon as needed)
+* [X] Add behavior to set a color case has filled value
+
+## Propriedades
+
+<ArgsTable of={InputFile} />
+
+## Default InputFile
+
+<Canvas>
+  <Story
+    name="InputFile"
+    args={{
+      accept: '.doc, .docx, .pdf',
+      errorMessage: '',
+      hasError: false,
+      hint: 'Envie o arquivo nos formatos .doc, .docx, .pdf',
+      id: 'input-file-smth',
+      labelIcon: 'AttachFile',
+      labelText: 'Adicionar arquivo',
+      onFileUpload: (e) => console.log('file uploaded', e),
+      selectAnotherFileText: 'Selecionar outro arquivo'
+    }}
+  >
+    {(args) => <InputFile {...args} />}
+  </Story>
+</Canvas>

@@ -1,0 +1,26 @@
+{
+  "ds": {
+    "spacing": {
+      "xs": {
+        "value": "4px",
+        "attributes": { "category": "size", "type": "spacing" }
+      },
+      "sm": {
+        "value": "8px",
+        "attributes": { "category": "size", "type": "spacing" }
+      },
+      "md": {
+        "value": "16px",
+        "attributes": { "category": "size", "type": "spacing" }
+      },
+      "lg": {
+        "value": "24px",
+        "attributes": { "category": "size", "type": "spacing" }
+      },
+      "xl": {
+        "value": "32px",
+        "attributes": { "category": "size", "type": "spacing" }
+      }
+    }
+  }
+}

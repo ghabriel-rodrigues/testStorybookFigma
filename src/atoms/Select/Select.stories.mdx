@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Select from './Select'
+
+<Meta title="atoms/Select" component={Select} argTypes={{}} />
+
+# Select
+
+`Select` é um **componente base (atom)**.
+
+`import { Select } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Com o foco no componente, é possível obter os seguintes comportamentos
+   - Ao pressionar `SPACE`, irá realizar a abertura do menu com as opções listadas
+   - Ao pressionar `ARROW-UP` e/ou `ARROW-DOWN`, irá realizar a navegação na lista de opções
+   - Ao pressionar `ENTER`, irá selecionar a opção desejada
+
+### Orientações
+
+Informe o valor `ariaLabel` que será repassado ao componente select. Dessa forma, o leitor de tela conseguirá instruir o usuário referente ao seu contexto de uso
+
+## Propriedades
+
+<ArgsTable of={Select} />
+
+## Default Select
+
+<Canvas>
+  <Story name="Select" args={{ id: 'id-to-select', placeholder: 'My select atom', ariaLabel: 'Label to select', options: [
+    { label: 'Portuguese', value: 'pt' },
+      { label: 'Spanish', value: 'es' },
+      { label: 'English', value: 'en' },
+      { label: 'A', value: 'a' },
+      { label: 'B', value: 'b' },
+      { label: 'C', value: 'c' },
+      { label: 'D', value: 'd' },
+      { label: 'E', value: 'e' },
+      { label: 'F', value: 'f' },
+      {
+        label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+          anim id est laborum.`,
+        value: 'longtext'
+      }
+  ] }}>
+    {(args) => <div style={{ width: 731 }}><Select {...args} /></div>}
+  </Story>
+</Canvas>

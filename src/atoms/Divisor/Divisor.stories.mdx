@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Divisor from './Divisor'
+
+<Meta title="atoms/Divisor" component={Divisor} />
+
+# Divisor
+
+Este é um componente base (atom). Extremamente simples e criado com finalidade de
+criar divisões horizontais ou verticais em seções de conteúdo.
+
+`import { Divisor } from '@gupy/design-system-v2'`
+
+## To-Do's
+
+- [ ] Desenvolver divisão vertical conforme DS v1
+- [ ] Desenvolver divisão com título DS v1
+
+## Propriedades
+
+<ArgsTable of={Divisor} />
+
+## Default Divisor
+
+<Canvas>
+  <Story name="Divisor" args={{}}>
+    {(args) => <Divisor {...args} />}
+  </Story>
+</Canvas>

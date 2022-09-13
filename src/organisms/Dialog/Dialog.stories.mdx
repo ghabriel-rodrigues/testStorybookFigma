@@ -1,0 +1,162 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Button from '@/atoms/Button/Button'
+import { Dialog, DialogButton } from './Dialog'
+
+<Meta
+  title="organisms/Dialog"
+  component={Dialog}
+  argTypes={{
+    size: {
+      options: ['xs', 'sm', 'md', 'lg', 'fullScreen'],
+      control: { type: 'radio' }
+    }
+  }}
+/>
+
+# Dialog
+
+`Dialog` é um **componente composto de outros componentes (organism)**. Existem 5 variações básicas de tamanho: `xs` (extra small),
+`sm` (small), `md` (medium) e `lg` (large) e `fullScreen`.
+
+`import { Dialog } from '@gupy/design-system-v2'`
+
+**Este componente é interdependente dos componentes listados abaixo**
+
+- `Radix UI Dialog.Primitive`
+- `@atoms/Icon`
+- `@atoms/Button`
+
+## Acessibilidade
+
+Utilizando a implementação da [RADIX UI - Dialog](https://www.radix-ui.com/docs/primitives/components/dialog), esse componente suporta todos os comportamentos assistivos requeridos pela A11Y, inferindo referências tal qual requerido na [documentação a11y](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/). Favor consultar a documentação da Radix para mais informações sobre os atributos e métodos desse componente.
+
+## Propriedades
+
+<ArgsTable of={Dialog} />
+
+## Dialog Simples
+
+<Canvas>
+  <Story
+    name="Dialog default"
+    args={{
+      id: 'Dialog-id',
+      title: 'Testando Dialog Simples',
+      size: 'xs'
+    }}
+  >
+    {(args) => {
+      const triggerButton = (
+        <Button
+          id="triggerButton"
+          variant="contained"
+          text="Abre Dialog simples"
+        />
+      )
+      return (
+        <Dialog triggerButton={triggerButton} {...args}>
+          Lorem ipsum sit dolor amet
+        </Dialog>
+      )
+    }}
+  </Story>
+</Canvas>
+
+## Dialog com botões no rodapé
+
+<Canvas>
+  <Story
+    name="Dialog with footer"
+    args={{
+      id: 'Dialog-id',
+      title: 'Testando Dialog Footer',
+      size: 'xs'
+    }}
+  >
+    {(args) => {
+      const triggerButton = (
+        <Button
+          id="triggerButton"
+          variant="contained"
+          text="Abre Dialog com rodapé"
+        />
+      )
+      const primaryButton = (
+        <DialogButton id="primaryButton" variant="contained" text="Salvar" />
+      )
+      const secondaryButton = (
+        <DialogButton id="secondaryButton" variant="text" text="Cancelar" />
+      )
+      return (
+        <Dialog
+          triggerButton={triggerButton}
+          primaryButton={primaryButton}
+          secondaryButton={secondaryButton}
+          {...args}
+        >
+          Lorem ipsum sit dolor amet
+        </Dialog>
+      )
+    }}
+  </Story>
+</Canvas>
+
+## Dialog em tela cheia
+
+<Canvas>
+  <Story
+    name="Dialog in full screen"
+    args={{
+      id: 'Dialog-id',
+      title: 'Testando Dialog FullScreen',
+      size: 'fullScreen'
+    }}
+  >
+    {(args) => {
+      const triggerButton = (
+        <Button
+          id="triggerButton"
+          variant="contained"
+          text="Abre Dialog com rodapé"
+        />
+      )
+      const primaryButton = (
+        <DialogButton id="primaryButton" variant="contained" text="Salvar" />
+      )
+      const secondaryButton = (
+        <DialogButton id="secondaryButton" variant="text" text="Cancelar" />
+      )
+      return (
+        <Dialog
+          triggerButton={triggerButton}
+          primaryButton={primaryButton}
+          secondaryButton={secondaryButton}
+          {...args}
+        >
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+          <p>Lorem ipsum sit dolor amet</p>
+        </Dialog>
+      )
+    }}
+  </Story>
+</Canvas>

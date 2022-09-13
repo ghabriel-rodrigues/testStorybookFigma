@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Switch from './Switch'
+
+<Meta
+  title="molecules/Switch"
+  component={Switch}
+  argTypes={{
+    label: {
+      defaultValue: 'Switch label',
+      control: {
+        type: 'text'
+      }
+    },
+    onChange: {
+      action: 'onChange'
+    },
+    id: {
+      defaultValue: 'switch-id',
+      control: {
+        type: 'text'
+      }
+    }
+  }}
+/>
+
+# Switch
+
+`Switch` é um **componente composto de outros componentes (molecule)**.
+
+`import { Switch } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+O Switch deve conter um valor na prop `aria-label` para ajudar o usuário a entender o que ele está fazendo, exemplo:
+
+### Interação via teclado
+
+- `Space` : Quando o foco está no Switch, o usuário pode alternar entre
+  o estado ativo e inativo.
+
+```jsx
+<Switch aria-label="Habilitar filtros de empresas com selo Gupy" />
+```
+
+## Propriedades
+
+<ArgsTable of={Switch} />
+
+## Default Switch
+
+<Canvas>
+  <Story name="Switch">{(args) => <Switch {...args} />}</Story>
+</Canvas>

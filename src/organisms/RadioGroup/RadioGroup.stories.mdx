@@ -1,0 +1,132 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import RadioGroup from './RadioGroup'
+import { action } from '@storybook/addon-actions'
+import Button from '@atoms/Button/Button'
+import { useState } from 'react'
+
+<Meta
+  title="organisms/RadioGroup"
+  component={RadioGroup}
+  argTypes={{
+    orientation: {
+      defaultValue: 'horizontal'
+    },
+    labelPosition: {
+      defaultValue: 'end'
+    }
+  }}
+/>
+
+# RadioGroup
+
+`RadioGroup` é um **componente composto de outros componentes (organism)**.
+
+`import { RadioGroup } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Esse componente fornece uma experiência acessível através de uma alta compatibilidade com leitores de tela e navegação via teclado.
+
+Usso deu através de sua implementação ter sido integrada a bibioteca `@react-aria/radio`: [documentação](https://react-spectrum.adobe.com/react-aria/useRadioGroup.html), e do uso do componente átomo de `FieldSet`.
+
+### Interação via teclado
+
+- `Tab` : Focará o primeiro elemento de `radio` quandos os items não estiverem selecionados, ou, focará o `radio` selecionado;
+- `Setas`: Ao focar um elemento de `radio`, utilize as setas para navegar entre os items e selecionar automaticamente;
+- `Espaço`: Ao focar o primeiro item de `radio`, utilize essa tecla para selecioná-lo.
+
+## Propriedades
+
+<ArgsTable of={RadioGroup} />
+
+## Uncontrolled
+
+<Canvas>
+  <Story
+    name="Uncontrolled"
+    args={{
+      label: 'Trabalho Remoto',
+      name: 'remoto',
+      defaultValue: 'sim',
+      items: [
+        {
+          label: 'Sim',
+          value: 'sim'
+        },
+        {
+          label: 'Não',
+          value: 'nao'
+        },
+        {
+          label: 'Tanto faz',
+          value: 'tanto-faz'
+        }
+      ]
+    }}
+  >
+    {(args) => (
+      <form
+        aria-label="Formulário de filtros"
+        onSubmit={(e) => {
+          e.preventDefault()
+          action('onSubmit')({ remoto: e.target.remoto.value })
+        }}
+      >
+        <RadioGroup {...args} />
+        <br />
+        <br />
+        <Button ariaLabel="Filtrar por trabalho remoto" text="Filtrar" />
+      </form>
+    )}
+  </Story>
+</Canvas>
+
+## Controlled
+
+<Canvas>
+  <Story
+    name="Controlled"
+    args={{
+      label: 'Trabalho Remoto',
+      name: 'remoto',
+      items: [
+        {
+          label: 'Sim',
+          value: 'sim'
+        },
+        {
+          label: 'Não',
+          value: 'nao'
+        },
+        {
+          label: 'Tanto faz',
+          value: 'tanto-faz'
+        }
+      ]
+    }}
+  >
+    {(args) => {
+      const [value, setValue] = useState('sim')
+      return (
+        <form
+          aria-label="Formulário de filtros"
+          onSubmit={(e) => {
+            e.preventDefault()
+            action('onSubmit')({ remoto: e.target.remoto.value })
+          }}
+        >
+          <RadioGroup {...args} value={value} onChange={setValue} />
+          <br />
+          <br />
+          <Button ariaLabel="Filtrar por trabalho remoto" text="Filtrar" />
+          <br />
+          <br />
+          <span>
+            Estado do componente:{' '}
+            <code>{JSON.stringify({ [args.name]: value })}</code>
+          </span>
+        </form>
+      )
+    }}
+  </Story>
+</Canvas>

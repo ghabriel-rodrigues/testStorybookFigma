@@ -1,0 +1,113 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { actions } from '@storybook/addon-actions'
+import Dropdown from './Dropdown'
+
+<Meta title="molecules/Dropdown" component={Dropdown} argTypes={{}} />
+
+# Dropdown
+
+`Dropdown` é um **componente composto de outros componentes (molecule)**.
+
+`import { Dropdown } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Com o foco no componente, é possível obter os seguintes comportamentos
+
+- Ao pressionar `SPACE`, irá realizar a abertura do menu com as opções listadas
+- Ao pressionar `ARROW-UP` e/ou `ARROW-DOWN`, irá realizar a navegação na lista de opções
+- Ao pressionar `ENTER`, irá selecionar a opção desejada
+
+### Orientações
+
+Informe o valor `ariaLabel` que será repassado ao componente select. Dessa forma, o leitor de tela conseguirá instruir o usuário referente ao seu contexto de uso
+
+### O que este componente não faz
+
+- Utilização do componente informando-o como campo obrigatório
+- Inicialização com valor pré-selecionado
+- Utilização de estilos com o comportamento `disabled` e `readOnly`
+- Estilos e comportamentos para os estados `warning` e `error`
+- Utilização com async render
+- Utilização com múltipla seleção
+- Utilização sem valores disponíveis na listagem
+- Customização do valor exibindo quando não existem valores a serem exibidos
+- Utilização sem borda ao entorno do Dropdown
+- Exibição de infotip ao lado da label
+- Utilização com altura flexível da listagem de itens
+- Interação através de input para pesquisar itens no Dropdown
+- Estilos e comportamentos com a propriedade `isLoading`
+- Comportamentos oferecidos pelas propriedades `emptyOptionsTextOnDebounce`, `debounceLengthText`, `searchableDebounce`, e `onSearch`
+
+## Propriedades
+
+<ArgsTable of={Dropdown} />
+
+## Default Dropdown
+
+<Canvas>
+  <Story
+    name="Dropdown single-value"
+    args={{
+      id: 'single-value-dropdown',
+      label: 'Testing Dropdown',
+      ariaLabel: 'It chooses options for your language list',
+      placeholder: 'Choose your option, e.g.: Portuguese',
+      ...actions({ onChange: 'changing dropdown value' }),
+      options: [
+        {
+          label: 'Portuguese',
+          value: 'pt'
+        },
+        {
+          label: 'Spanish',
+          value: 'es'
+        },
+        {
+          label: 'English',
+          value: 'en'
+        }
+      ]
+    }}
+  >
+    {(args) => (
+      <div style={{ width: '100%' }}>
+        <Dropdown {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Dropdown multi-value"
+    args={{
+      isMulti: true,
+      id: 'multi-value-dropdown',
+      label: 'Testing multi-value',
+      ariaLabel: 'It chooses options for your language list',
+      placeholder: 'Choose your option, e.g.: Portuguese',
+      ...actions({ onChange: 'changing dropdown value' }),
+      options: [
+        {
+          label: 'Portuguese',
+          value: 'pt'
+        },
+        {
+          label: 'Spanish',
+          value: 'es'
+        },
+        {
+          label: 'English',
+          value: 'en'
+        }
+      ]
+    }}
+  >
+    {(args) => (
+      <div style={{ width: '100%' }}>
+        <Dropdown {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>

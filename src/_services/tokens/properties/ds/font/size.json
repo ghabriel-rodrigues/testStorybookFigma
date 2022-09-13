@@ -1,0 +1,40 @@
+{
+  "ds": {
+    "font": {
+      "size": {
+        "xs": {
+          "value": "10px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "sm": {
+          "value": "12px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "base": {
+          "value": "14px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "lg": {
+          "value": "16px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "lg-2": {
+          "value": "18px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "nm": {
+          "value": "20px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "xlg": {
+          "value": "24px",
+          "attributes": { "category": "size", "type": "font" }
+        },
+        "xxlg": {
+          "value": "32px",
+          "attributes": { "category": "size", "type": "font" }
+        }
+      }
+    }
+  }
+}

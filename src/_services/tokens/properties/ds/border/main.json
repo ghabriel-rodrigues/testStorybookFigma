@@ -1,0 +1,14 @@
+{
+  "ds": {
+    "border": {
+      "radius": {
+        "value": "4px",
+        "attributes": { "category": "size", "type": "radius" }
+      },
+      "width": {
+        "value": "1px",
+        "attributes": { "category": "size", "type": "border" }
+      }
+    }
+  }
+}

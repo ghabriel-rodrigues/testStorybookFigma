@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import ToastCloseButton from './ToastCloseButton'
+
+<Meta
+  title="atoms/Toast/ToastCloseButton"
+  component={ToastCloseButton}
+  argTypes={{}}
+/>
+
+# ToastCloseButton
+
+`ToastCloseButton` é um **componente base (atom)**.
+
+`import { ToastCloseButton } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Todo `ToastCloseButton` deve receber uma propriedade `label` para ser atribuído ao `aria-label` do botão de fechar.
+
+```javascript
+<ToastCloseButton label="remover filtro">Vagas remotas</ToastCloseButton>
+```
+
+## Propriedades
+
+<ArgsTable of={ToastCloseButton} />
+
+## Default ToastCloseButton
+
+<Canvas>
+  <Story
+    name="ToastCloseButton"
+    args={{
+      onClose: () => alert('teste')
+    }}
+  >
+    {(args) => <ToastCloseButton {...args} />}
+  </Story>
+</Canvas>

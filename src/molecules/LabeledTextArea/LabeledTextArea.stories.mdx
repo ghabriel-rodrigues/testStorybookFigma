@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import LabeledTextArea from './LabeledTextArea'
+
+<Meta
+  title="molecules/LabeledTextArea"
+  component={LabeledTextArea}
+  argTypes={{}}
+/>
+
+# LabeledTextArea
+
+`LabeledTextArea` é um **componente composto de outros componentes (molecule)**.
+
+`import { LabeledTextArea } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+- Informe o valor da propriedade `id`, que será repassado ao componente Label em seu atributo `htmlFor`,
+  fazendo assim a ligação da label com o textarea.
+
+- Também é possível utilizar o próprio attr `label` , que será o texto exibido pela label.
+
+- Caso seja necessário utilizar a propriedade `helperMessage`, o próprio componente já possui a inteligência
+  de setar os parâmetros corretos da wai-aria para indicar que aquele texto esta relacionado ao uso do textarea
+
+## Propriedades
+
+<ArgsTable of={LabeledTextArea} />
+
+## Default LabeledTextArea
+
+<Canvas>
+  <Story
+    name="LabeledTextArea"
+    args={{
+      id: 'labeled-textarea-id',
+      label: 'My textarea label here',
+      placeholder: 'My placeholder here',
+      disabled: false,
+      hasError: false
+    }}
+  >
+    {(args) => <LabeledTextArea {...args} />}
+  </Story>
+</Canvas>

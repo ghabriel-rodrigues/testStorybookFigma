@@ -1,0 +1,112 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Tip from './Tip'
+import Paragraph from '../Typography/Paragraph/Paragraph'
+import { TipTypes } from './Tip.types'
+
+<Meta title="atoms/Tip" component={Tip} argTypes={{}} />
+
+# Tip
+
+`Tip` é um **componente base (atom)**.
+
+`import { Tip } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+- O componente Tip exibe um mensagem de texto com string simples ou composta por elementos HTML. Para garantir a acessibilidade do componente, utilize apenas outros elementos acessíveis em sua composição.
+
+- Os ícones implementam a propriedade `aria-hidden` para não haver problemas com leitores de tela.
+
+Exemplo de componente acessível:
+```
+<Tip type="info">
+  <Paragraph><strong>Sucesso:</strong> Mensagem informativa.</Paragraph>
+</Tip>
+```
+
+## Propriedades
+
+<ArgsTable of={Tip} />
+
+## Default Tip
+
+<Canvas>
+  <Story
+    name="Tip"
+    args={{
+      children: 'Tip com mensagem de texto simples.'
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>
+
+## Normal Tip
+
+<Canvas>
+  <Story
+    name="Normal Tip"
+    args={{
+      type: TipTypes.normal,
+      children: <Paragraph> Simone ainda não aceitou o convite para entrar na plataforma, e por isso não será notificado(a) sobre o evento marcado. Apenas usuário(a)s da empresa envolvidos no evento receberão o convite. Saiba mais.</Paragraph>
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>
+
+## Hint Tip
+
+<Canvas>
+  <Story
+    name="Hint Tip"
+    args={{
+      type: TipTypes.hint,
+      children: <Paragraph><strong>Dica:</strong> Simone ainda não aceitou o convite para entrar na plataforma, e por isso não será notificado(a) sobre o evento marcado. Apenas usuário(a)s da empresa envolvidos no evento receberão o convite. Saiba mais.</Paragraph>
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>
+
+## Info Tip
+
+<Canvas>
+  <Story
+    name="Info Tip"
+    args={{
+      type: TipTypes.info,
+      children: <Paragraph><strong>Sucesso:</strong> Simone ainda não aceitou o convite para entrar na plataforma, e por isso não será notificado(a) sobre o evento marcado. Apenas usuário(a)s da empresa envolvidos no evento receberão o convite. Saiba mais.</Paragraph>
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>
+
+## Warning Tip
+
+<Canvas>
+  <Story
+    name="Warning Tip"
+    args={{
+      type: TipTypes.warning,
+      children: <Paragraph><strong>Atenção:</strong> Simone ainda não aceitou o convite para entrar na plataforma, e por isso não será notificado(a) sobre o evento marcado. Apenas usuário(a)s da empresa envolvidos no evento receberão o convite. Saiba mais.</Paragraph>
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>
+
+## Danger Tip
+
+<Canvas>
+  <Story
+    name="Danger Tip"
+    args={{
+      type: TipTypes.danger,
+      children: <Paragraph><strong>Cuidado:</strong> Simone ainda não aceitou o convite para entrar na plataforma, e por isso não será notificado(a) sobre o evento marcado. Apenas usuário(a)s da empresa envolvidos no evento receberão o convite. Saiba mais.</Paragraph>
+    }}
+  >
+    {(args) =>  <Tip {...args} />}
+  </Story>
+</Canvas>

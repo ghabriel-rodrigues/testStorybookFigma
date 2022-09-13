@@ -1,0 +1,69 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from './components/test-data'
+import InputText from './InputText'
+
+<Meta
+  title="molecules/InputText"
+  component={InputText}
+  argTypes={{
+    iconPosition: {
+      options: ['', 'left', 'right', 'both'],
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+# InputText
+
+`InputText` é um **componente composto de outros componentes (molecule)**.
+
+`import { InputText } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+- Informe o valor da propriedade `id`, que será repassado ao componente Label em seu atributo `htmlFor`,
+  fazendo assim a ligação da label com o input.
+
+- Também é possível utilizar o próprio attr `label` , que será o texto exibido pela label.
+
+- Caso seja necessário utilizar a propriedade `helperMessage`, o próprio componente já possui a inteligência
+  de setar os parâmetros corretos da wai-aria para indicar que aquele texto esta relacionado ao uso do input
+
+## Orientações
+
+- A propriedade `mask` (do tipo string) serve para criar uma máscara no input e orientar as pessoas usuárias
+  a preencher campos com formatos padrão como CEP, CPF, telefone, entre outros. Os caracteres aceitos são:
+  - `9`: `0-9`
+  - `a`: `a-z, A-Z`
+  - `*`: `0-9, a-z, A-Z`
+
+  Exemplos:
+  - CPF: `mask="999.999.999-99"`
+  - CEP: `mask="99999-999"`
+  - Celular: `mask="(99) 99999-9999"`
+
+## Propriedades
+
+<ArgsTable of={InputText} />
+
+## Default InputText
+
+<Canvas>
+  <Story
+    name="InputText"
+    args={{
+      id: 'input-text',
+      label: 'My input label here',
+      InputText: 'My InputText',
+      placeholder: 'My placeholder here',
+      disabled: false,
+      hasError: false,
+      helperMessage: '',
+      iconPosition: 'right',
+      icons: [sampleIcon],
+      mask: ''
+    }}
+  >
+    {(args) => <InputText {...args} />}
+  </Story>
+</Canvas>

@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Infotip from './Infotip'
+import Icon from '../Icon/Icon'
+import { actions } from '@storybook/addon-actions'
+import { IconType } from '../Icon/enums'
+
+<Meta title="atoms/Infotip" component={Infotip} argTypes={{}} />
+
+# Infotip
+
+`Infotip` é um **componente base (atom)**.
+
+`import { Infotip } from '@gupy/design-system-v2'`
+
+## Infotip Delay
+
+Infotips devem aparecer após um pequeno atraso ao passar o mouse sobre o gatilho ou instantaneamente ao usar o foco do teclado, já em eventos de toque, ele é aberto ao clicar no elemento que dispara a abertura do `Infotip` e é fechado ao clicar fora desse elemento.
+
+## Acessibilidade
+* Repasse uma descrição assertiva da ação como propriedade ariaLabel, para auxiliar o trabalho dos screen-readers ao identificarem o componente
+
+## Events
+
+Infotip aceita um manipulador onOpenChange que é acionado sempre que a dica de ferramenta é mostrada ou ocultada.
+
+## Propriedades
+
+<ArgsTable of={Infotip} />
+
+## Default Infotip
+
+<Canvas>
+  <Story
+    name="Infotip"
+    args={{
+      tooltipText:
+        'Curabitur semper enim elit, ac feugiat enim laoreet a. Morbi ac mollis dolor, nec rutrum nibh.',
+      position: 'top',
+      delay: 0,
+      ariaLabel:'Acesse informações do Perfil',
+      ...actions({ onOpenChange: 'isOpen' })
+    }}
+  >
+    {(args) => (
+      <div style={{ padding: '100px' }}>
+        <Infotip {...args}>
+          <Icon type={IconType.Avatar} />
+        </Infotip>
+      </div>
+    )}
+  </Story>
+</Canvas>

@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import CheckboxGroup from './CheckboxGroup'
+
+<Meta
+  title="organisms/CheckboxGroup"
+  component={CheckboxGroup}
+  argTypes={{}}
+/>
+
+# CheckboxGroup
+
+`CheckboxGroup` é um **componente composto de outros componentes (organism)**.
+
+`import { CheckboxGroup } from '@gupy/design-system-v2'`
+
+**Este componente é interdependente dos componentes listados abaixo**
+
+* `Checkbox`
+* `CheckboxLabel`
+
+
+## Propriedades
+
+<ArgsTable of={CheckboxGroup} />
+
+## Default CheckboxGroup
+
+<Canvas>
+  <Story 
+    name='CheckboxGroup'
+    args={{
+      id: 'CheckboxGroup-id',
+      items: [
+        {checked:false, label:'Label - 1', id:'checkbox', name:'checkbox'},
+        {checked:false, label:'Label - 2', id:'checkbox', name:'checkbox'}
+      ],
+    }}
+  >
+    {(args) => <CheckboxGroup {...args} />}
+  </Story>
+</Canvas>

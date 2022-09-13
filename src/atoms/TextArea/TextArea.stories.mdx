@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import TextArea from './TextArea'
+
+<Meta title="atoms/TextArea" component={TextArea} argTypes={{}} />
+
+# TextArea
+
+`TextArea` é um **componente base (atom)**.
+
+`import { TextArea } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Utilize placeholders exemplificando o tipo de dado que deve ser inserido
+
+Exemplo:
+
+`<TextArea placeholder="My placeholder here" id="textarea-id-defaulft" />`
+
+## Propriedades
+
+<ArgsTable of={TextArea} />
+
+## Default TextArea
+
+<Canvas>
+  <Story
+    name="TextArea"
+    args={{
+      id: 'textarea-id-defaulft',
+      placeholder: 'My placeholder here',
+      disabled: false,
+      hasError: false,
+      resize: true,
+      rows: 2
+    }}
+  >
+    {(args) => <TextArea {...args} />}
+  </Story>
+</Canvas>

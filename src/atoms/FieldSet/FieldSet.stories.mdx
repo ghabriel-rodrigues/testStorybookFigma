@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import FieldSet from './FieldSet'
+import Legend from './components/Legend'
+import Label from '@atoms/Label/Label'
+import InputText from '@molecules/InputText/InputText'
+
+<Meta title="atoms/FieldSet" component={FieldSet} />
+
+# FieldSet
+
+`FieldSet` é um **componente base (atom)**.
+
+`import { FieldSet, Legend } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+O componente `FieldSet` fornece um contêiner para controles de formulário relacionados, e o componente `Legend` atua como um cabeçalho para identificar o grupo.
+
+## Propriedades
+
+Contém todas as propriedades da tag HTML `fieldset`.
+
+## Default FieldSet
+
+<Canvas>
+  <Story name="FieldSet">
+    {(args) => (
+      <FieldSet {...args}>
+        <Legend>Informações pessoais</Legend>
+        <hr aria-hidden />
+        <InputText id="name" name="name" placeholder="Fulano" label="Nome" />
+        <br />
+        <InputText
+          id="name"
+          name="email"
+          placeholder="fulano@email.com"
+          label="E-mail"
+        />
+      </FieldSet>
+    )}
+  </Story>
+</Canvas>

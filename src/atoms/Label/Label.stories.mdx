@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import sampleIcon from '@atoms/Icon/components/test-data/sampleIcon'
+import Label from './Label'
+
+<Meta title="atoms/Label" component={Label} argTypes={{}} />
+
+# Label
+
+`Label` é um **componente base (atom)**.
+
+`import { Label } from '@gupy/design-system-v2'`
+
+## Acessibilidade
+
+Utilize o atributo `htmlFor` para indicar o sentido semantico de inputs,
+auxiliando utilizadores de screen-readers entenderem precisamente seu uso, caso necessário.
+
+Para tal, também é possível utilizar o próprio attr `ariaLabel` do `<Input/>`, verifique o uso se necessário.
+
+## Propriedades
+
+<ArgsTable of={Label} />
+
+## Default Label
+
+<Canvas>
+  <Story name="Label" args={{ children: 'My Label' }}>
+    {(args) => <Label {...args} />}
+  </Story>
+</Canvas>

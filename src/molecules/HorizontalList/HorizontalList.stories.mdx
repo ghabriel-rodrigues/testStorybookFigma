@@ -1,0 +1,90 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import HorizontalList from './HorizontalList'
+import HorizontalListItem from './components/HorizontalListItem'
+import Card from '../../atoms/Card/Card'
+
+<Meta
+  title="molecules/HorizontalList"
+  component={HorizontalList}
+  argTypes={{}}
+/>
+
+# HorizontalList
+
+`HorizontalList` é um **componente composto de outros componentes (molecule)**.
+
+## Acessibilidade
+
+O HorizontalList deve conter um valor na prop `aria-label` para ajudar o usuário a identificar o propósito da lista horizontal, e opcionalmente os items devem também receber uma descrição, exemplo:
+
+```jsx
+<HorizontalList aria-label="Empresas com selo Gupy">
+  <HorizontalListItem
+    aria-label="Link para página de carreira da Empresa 1"
+    key={item}
+  >
+    <a href="#" rel="noreferrer">
+      <Card>
+        <div>Imagem da logo da Empresa 1</div>
+        <h1>Empresa 1</h1>
+      </Card>
+    </a>
+  </HorizontalListItem>
+</HorizontalList>
+```
+
+O conteúdo de um HorizontalListItem deve preferencialmente ser um elemento focável (`button`, `a`, etc.), caso não seja possível adicione `tabIndex={0}` para torná-lo focável e navegável via teclado, exemplo:
+
+```jsx
+<HorizontalList aria-label="Empresas com selo Gupy">
+  <HorizontalListItem
+    aria-label="Link para página de carreira da Empresa 1"
+    tabIndex={0}
+    key={item}
+  >
+    <Card>
+      <div>Imagem da logo da Empresa 1</div>
+      <h1>Empresa 1</h1>
+    </Card>
+  </HorizontalListItem>
+</HorizontalList>
+```
+
+### Interação via teclado
+
+- `Tab` : Para navegar entre os items da lista.
+
+## Propriedades
+
+<ArgsTable of={HorizontalList} />
+
+## Default HorizontalList
+
+<Canvas>
+  <Story name="HorizontalList">
+    {(args) => (
+      <HorizontalList {...args}>
+        {[...Array(10).keys()].map((item) => (
+          <HorizontalListItem key={item}>
+            <a
+              style={{
+                display: 'block',
+                textDecoration: 'none',
+                color: 'initial'
+              }}
+              href="#"
+              rel="noreferrer"
+            >
+              <Card>
+                <h1>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </h1>
+              </Card>
+            </a>
+          </HorizontalListItem>
+        ))}
+      </HorizontalList>
+    )}
+  </Story>
+</Canvas>

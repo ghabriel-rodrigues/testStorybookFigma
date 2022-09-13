@@ -1,0 +1,169 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Button from './Button';
+import { IconType } from '@atoms/Icon/enums.ts'
+
+<Meta 
+  title="atoms/Button" 
+  component={Button} 
+  argTypes={{
+    variant: {
+      options: ['contained', 'outlined', 'text', 'link'],
+      control: { type: 'radio' }
+    },
+    size: {
+      options: ['link', 'xs', 'sm', 'md', 'lg', 'xl'],
+      control: { type: 'radio' }
+    },
+    iconAlignment: {
+      options: ['', 'left', 'right'],
+      control: { type: 'select' }
+    },
+  }}
+/>
+
+# Button
+
+`Button` é um **componente base (atom)**. Existem 4 variações básicas de botões: `contained` (primário), 
+`outlined` (secundário), `text` e `link`.
+
+Para ações primárias dos usuários deve-se usar o tipo `contained`, com atenção para utilizar 
+apenas uma instância desse tipo por tela, enfatizando a ação principal.
+
+`import { Button } from '@gupy/design-system-v2'`
+
+## Boas Práticas
+* Use botão `Contained` para ações principais na cor `gupy-blue`
+* Use botão `Outlined` para ações secundárias
+* Use verbos de ação ou frases (não muito longas) para descrever o que acontece após interagir com o botão
+* Repasse uma descrição assertiva da ação como propriedade ariaLabel, para auxiliar o trabalho dos screen-readers ao identificarem o componente
+
+## Acessibilidade
+
+**Exemplo de implementação de ariaLabel (para evitar)**
+
+* Nesse caso não sabemos o que o botão quer executar, repassando uma informação incompleta ao screen reader sobre a ação do botão.
+
+`<Button id="salvar-perfil" ariaLabel="salvar" text="Salvar" />` 
+
+**Exemplo de implementação de ariaLabel (para seguir)**
+
+* Agora sabemos precisamente o que o botão quer executar, repassando uma boa informação ao screen reader referente a ação do botão.
+
+`<Button id="salvar-perfil" ariaLabel="Salvar perfil de usuário" text="Salvar" />` 
+
+## Aviso importante
+
+Alguns comportamentos e efeitos visuais ainda não estão sendo suportados por essa primeira versão do componente.
+
+Exemplos:
+
+* Ripple effect is not being supported right now. Please check the link for a possible solution.
+`https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/`
+
+## Propriedades
+
+<ArgsTable of={Button} />
+
+## Default Button
+
+<Canvas>
+  <Story 
+    name='Button'
+    args={{
+      id: 'button-id-defaulft',
+      text: 'Enviar',
+      ariaLabel: 'Enviar os dados do formulário de registro de vaga'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Contained Button
+
+<Canvas>
+  <Story 
+    name='Contained Button'
+    args={{
+      variant: 'contained',
+      size: 'md',
+      disabled: false,
+      iconType: "ArrowForward",
+      id: 'button-id-contained',
+      text: 'Enviar',
+      ariaLabel: 'Enviar os dados do formulário de registro de vaga'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Outlined Button
+
+<Canvas>
+  <Story 
+    name='Outlined Button'
+    args={{
+      variant: 'outlined',
+      size: 'md',
+      disabled: false,
+      iconType: "ArrowForward",
+      id: 'button-id-outlined',
+      text: 'Enviar',
+      ariaLabel: 'Enviar os dados do formulário de registro de vaga'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Text Button
+
+<Canvas>
+  <Story 
+    name='Text Button'
+    args={{
+      variant: 'text',
+      size: 'md',
+      disabled: false,
+      iconType: "ArrowForward",
+      id: 'button-id-text',
+      text: 'Enviar',
+      ariaLabel: 'Enviar os dados do formulário de registro de vaga'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Link Button
+
+<Canvas>
+  <Story 
+    name='Link Button'
+    args={{
+      variant: 'link',
+      id: 'button-id-link',
+      text: 'Enviar',
+      ariaLabel: 'Enviar os dados do formulário de registro de vaga'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+## Icon Button
+
+<Canvas>
+  <Story 
+    name='Icon Button'
+    args={{
+      id: 'button-id-icon',
+      text: 'Procurar',
+      ariaLabel: 'Procurar vagas',
+      iconType: 'Search',
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
